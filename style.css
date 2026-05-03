@@ -1,0 +1,158 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: radial-gradient(circle at center, #050510, #000);
+    overflow: hidden;
+    color: white;
+    font-family: Arial;
+}
+
+/* НАВИГАЦИЯ */
+.top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 50px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 1000;
+}
+
+.small-text1 { font-size: 10px; }
+.small-text2 { font-size: 40px; }
+.small-text3 { font-size: 14px; }
+
+.center-nav {
+    text-align: center;
+}
+
+.ic1 {
+    display: flex;
+    gap: 15px;
+}
+
+.ic1 div {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.i1, .i2, .i3 {
+    background: #29292a;
+}
+
+/* СЛАЙДЕР */
+.slider {
+    position: relative;
+    height: 100vh;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+
+    opacity: 0;
+    transform: scale(1.2);
+    transition: 1s ease;
+
+    padding: 0 80px;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.text {
+    width: 280px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 1s ease;
+}
+
+.slide.active .text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.planet-wrapper {
+    animation: float 6s ease-in-out infinite;
+}
+
+.planet {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+}
+
+.spin {
+    animation: spin 3s linear infinite;
+}
+
+@keyframes float {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+.sun {
+    background: radial-gradient(circle, orange, red);
+    box-shadow: 0 0 120px orange;
+}
+
+.mercury {
+    background: radial-gradient(circle, #b1b1b1, #5a5a5a);
+    box-shadow: 0 0 60px #aaa;
+}
+
+.venus {
+    background: radial-gradient(circle, #c9a27c, #5a3d2b);
+    box-shadow: 0 0 80px #c9a27c;
+}
+
+.earth {
+    background: radial-gradient(circle, #2b6cff, #0b3d91);
+    box-shadow: 0 0 80px #2b6cff;
+}
+
+.nav-controls {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+button {
+    padding: 10px 25px;
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    margin: 0 10px;
+}
